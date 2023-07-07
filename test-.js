@@ -32,7 +32,6 @@ let testCase1 = [
 ];
 
 testCase1.sort((a, b) => {
-  // Rule 1: Sort by total marks (descending order)
   const totalMarksA = a.biology + a.chemistry;
   const totalMarksB = b.biology + b.chemistry;
   if (totalMarksA > totalMarksB) {
@@ -40,15 +39,12 @@ testCase1.sort((a, b) => {
   } else if (totalMarksA < totalMarksB) {
     return 1;
   }
-
-  // Rule 2: Sort by biology marks (descending order)
   if (a.biology > b.biology) {
     return -1;
   } else if (a.biology < b.biology) {
     return 1;
   }
 
-  // Rule 3: Sort by date of birth (ascending order)
   const dobA = new Date(a.dob);
   const dobB = new Date(b.dob);
   if (dobA > dobB) {
@@ -57,7 +53,6 @@ testCase1.sort((a, b) => {
     return -1;
   }
 
-  // If all rules are the same, maintain the original order
   return 0;
 });
 
